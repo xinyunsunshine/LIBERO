@@ -58,12 +58,26 @@ libero_suites = [
     "libero_object",
     "libero_goal",
     "libero_90",
+    "libero_90_subset",
+    "libero_90_subset0",
+    "libero_90_subset0_v2",
+    "libero_90_boost",
     "libero_10",
 ]
+
+# Suites whose bddl/init files live under a different folder name
+suite_folder_map = {
+    "libero_90_subset": "libero_90",
+    "libero_90_subset0": "libero_90",
+    "libero_90_subset0_v2": "libero_90",
+    "libero_90_boost": "libero_90",
+}
+
 task_maps = {}
 max_len = 0
 for libero_suite in libero_suites:
     task_maps[libero_suite] = {}
+    problem_folder = suite_folder_map.get(libero_suite, libero_suite)
 
     for task in libero_task_map[libero_suite]:
         language = grab_language_from_filename(task + ".bddl")
@@ -71,7 +85,7 @@ for libero_suite in libero_suites:
             name=task,
             language=language,
             problem="Libero",
-            problem_folder=libero_suite,
+            problem_folder=problem_folder,
             bddl_file=f"{task}.bddl",
             init_states_file=f"{task}.pruned_init",
         )
@@ -114,7 +128,7 @@ class Benchmark(abc.ABC):
 
     def _make_benchmark(self):
         tasks = list(task_maps[self.name].values())
-        if self.name == "libero_90":
+        if self.name in ("libero_90", "libero_90_subset", "libero_90_subset0", "libero_90_subset0_v2", "libero_90_boost"):
             self.tasks = tasks
         else:
             print(f"[info] using task orders {task_orders[self.task_order_index]}")
@@ -208,6 +222,38 @@ class LIBERO_10(Benchmark):
     def __init__(self, task_order_index=0):
         super().__init__(task_order_index=task_order_index)
         self.name = "libero_10"
+        self._make_benchmark()
+
+
+@register_benchmark
+class LIBERO_90_SUBSET(Benchmark):
+    def __init__(self, task_order_index=0):
+        super().__init__(task_order_index=task_order_index)
+        self.name = "libero_90_subset"
+        self._make_benchmark()
+
+
+@register_benchmark
+class LIBERO_90_SUBSET0(Benchmark):
+    def __init__(self, task_order_index=0):
+        super().__init__(task_order_index=task_order_index)
+        self.name = "libero_90_subset0"
+        self._make_benchmark()
+
+
+@register_benchmark
+class LIBERO_90_SUBSET0_V2(Benchmark):
+    def __init__(self, task_order_index=0):
+        super().__init__(task_order_index=task_order_index)
+        self.name = "libero_90_subset0_v2"
+        self._make_benchmark()
+
+
+@register_benchmark
+class LIBERO_90_BOOST(Benchmark):
+    def __init__(self, task_order_index=0):
+        super().__init__(task_order_index=task_order_index)
+        self.name = "libero_90_boost"
         self._make_benchmark()
 
 

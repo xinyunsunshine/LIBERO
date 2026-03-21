@@ -47,6 +47,30 @@ libero_task_map = {
         "KITCHEN_SCENE8_put_both_moka_pots_on_the_stove",
         "KITCHEN_SCENE6_put_the_yellow_and_white_mug_in_the_microwave_and_close_it",
     ],
+    "libero_90_subset0": [
+        "KITCHEN_SCENE3_put_the_moka_pot_on_the_stove",
+        "STUDY_SCENE4_pick_up_the_book_on_the_right_and_place_it_under_the_cabinet_shelf",
+    ],
+    "libero_90_subset0_v2": [
+        "KITCHEN_SCENE4_put_the_wine_bottle_on_the_wine_rack",
+        "LIVING_ROOM_SCENE5_put_the_red_mug_on_the_left_plate",
+    ],
+    "libero_90_boost": [
+        "KITCHEN_SCENE6_close_the_microwave",
+        "KITCHEN_SCENE3_put_the_moka_pot_on_the_stove",
+    ],
+    "libero_90_subset": [
+        "KITCHEN_SCENE3_put_the_moka_pot_on_the_stove",
+        "KITCHEN_SCENE4_put_the_wine_bottle_on_the_wine_rack",
+        "KITCHEN_SCENE6_close_the_microwave",
+        "KITCHEN_SCENE9_put_the_frying_pan_on_the_cabinet_shelf",
+        "LIVING_ROOM_SCENE1_pick_up_the_cream_cheese_box_and_put_it_in_the_basket",
+        "LIVING_ROOM_SCENE2_pick_up_the_alphabet_soup_and_put_it_in_the_basket",
+        "LIVING_ROOM_SCENE4_pick_up_the_chocolate_pudding_and_put_it_in_the_tray",
+        "LIVING_ROOM_SCENE5_put_the_red_mug_on_the_left_plate",
+        "STUDY_SCENE1_pick_up_the_book_and_place_it_in_the_front_compartment_of_the_caddy",
+        "STUDY_SCENE4_pick_up_the_book_on_the_right_and_place_it_under_the_cabinet_shelf",
+    ],
     "libero_90": [
         "KITCHEN_SCENE10_close_the_top_drawer_of_the_cabinet",
         "KITCHEN_SCENE10_close_the_top_drawer_of_the_cabinet_and_put_the_black_bowl_on_top_of_it",
