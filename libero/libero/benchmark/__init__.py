@@ -62,6 +62,8 @@ libero_suites = [
     "libero_90_subset0",
     "libero_90_subset0_v2",
     "libero_90_boost",
+    "libero_90_task14",
+    "libero_90_task39",
     "libero_10",
 ]
 
@@ -71,6 +73,8 @@ suite_folder_map = {
     "libero_90_subset0": "libero_90",
     "libero_90_subset0_v2": "libero_90",
     "libero_90_boost": "libero_90",
+    "libero_90_task14": "libero_90",
+    "libero_90_task39": "libero_90",
 }
 
 task_maps = {}
@@ -128,7 +132,7 @@ class Benchmark(abc.ABC):
 
     def _make_benchmark(self):
         tasks = list(task_maps[self.name].values())
-        if self.name in ("libero_90", "libero_90_subset", "libero_90_subset0", "libero_90_subset0_v2", "libero_90_boost"):
+        if self.name in ("libero_90", "libero_90_subset", "libero_90_subset0", "libero_90_subset0_v2", "libero_90_boost", "libero_90_task14", "libero_90_task39"):
             self.tasks = tasks
         else:
             print(f"[info] using task orders {task_orders[self.task_order_index]}")
@@ -254,6 +258,22 @@ class LIBERO_90_BOOST(Benchmark):
     def __init__(self, task_order_index=0):
         super().__init__(task_order_index=task_order_index)
         self.name = "libero_90_boost"
+        self._make_benchmark()
+
+
+@register_benchmark
+class LIBERO_90_TASK14(Benchmark):
+    def __init__(self, task_order_index=0):
+        super().__init__(task_order_index=task_order_index)
+        self.name = "libero_90_task14"
+        self._make_benchmark()
+
+
+@register_benchmark
+class LIBERO_90_TASK39(Benchmark):
+    def __init__(self, task_order_index=0):
+        super().__init__(task_order_index=task_order_index)
+        self.name = "libero_90_task39"
         self._make_benchmark()
 
 

@@ -163,4 +163,10 @@ libero_task_map = {
         "STUDY_SCENE4_pick_up_the_book_on_the_right_and_place_it_on_the_cabinet_shelf",
         "STUDY_SCENE4_pick_up_the_book_on_the_right_and_place_it_under_the_cabinet_shelf",
     ],
+    "libero_90_task14": [
+        "KITCHEN_SCENE2_put_the_middle_black_bowl_on_the_plate",
+    ],
+    "libero_90_task39": [
+        "KITCHEN_SCENE8_turn_off_the_stove",
+    ],
 }
