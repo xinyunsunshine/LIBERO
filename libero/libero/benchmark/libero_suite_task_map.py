@@ -169,4 +169,7 @@ libero_task_map = {
     "libero_90_task39": [
         "KITCHEN_SCENE8_turn_off_the_stove",
     ],
+    "libero_90_task77": [
+        "STUDY_SCENE2_pick_up_the_book_and_place_it_in_the_back_compartment_of_the_caddy",
+    ],
 }
